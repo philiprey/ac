@@ -1,0 +1,48 @@
+.post-type-shipping_zone .option-group .label {
+	font-weight: bold;
+	width: 15%;
+	float: left;
+}
+.post-type-shipping_zone .option-group label {
+	float: left;
+}
+.post-type-shipping_zone .option-group select,
+.post-type-shipping_zone .option-group textarea {
+	width: 85%;
+}
+.post-type-shipping_zone .option-group .chosen-choices {
+	min-height: 56px;
+}
+
+#shipping_zones_table tr .row-actions {
+	visibility: hidden;
+}
+#shipping_zones_table tr:hover > td > .row-actions {
+	visibility: visible !important;
+}
+
+/* Description icon */
+.post-type-shipping_zone .option-group .description {
+	position: relative;
+	float: left;
+	clear: both;
+	width: 200px;
+	font-weight: normal;
+	font-style: normal;
+}
+.post-type-shipping_zone .option-group .was_desc {
+	right: 0;
+	margin-left: -10px;
+	z-index: 10;
+}
+.post-type-shipping_zone .option-group .was_desc:after,
+.post-type-shipping_zone .option-group .was_desc::after {
+	left: 10px;
+	right: initial;
+}
+
+.post-type-shipping_zone .zone_desc {
+	border-bottom: 1px dotted #ECECEC;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}

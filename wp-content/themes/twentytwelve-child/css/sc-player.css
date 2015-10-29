@@ -1,0 +1,103 @@
+.sc-player {
+	width: 100%;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 0.714285rem !important;
+	font-size: 0.714285rem !important;
+}
+.sc-player a,
+.sc-player a:link,
+.sc-player a:visited,
+.sc-player a:hover,
+.sc-player a:active {
+    text-decoration: none !important;
+}
+.sc-player ol, .sc-player li {
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+}
+.sc-player .sc-controls {
+	float: left;
+	width: 100%;
+	min-width: 50px;
+	height: 30px;
+	background: url(../img/post-loader.gif) no-repeat 0 5px;
+}
+.sc-player .sc-controls a {
+	float: left;
+	width: 25px;
+	height: 25px;
+	border: 1px solid #000000;
+}
+.sc-player .sc-controls a {
+	color: transparent;
+}
+.sc-player .sc-controls a.sc-play #pause-btn {
+	display: none;
+}
+.sc-time-indicators {
+	float: right;
+}
+.sc-volume-slider {
+	clear: right;
+	float: right;
+	width: 130px;
+	height: 10px;
+	margin-top: 3px;
+	border: 1px solid #000000;
+}
+.sc-volume-slider .sc-volume-status {
+	float: left;
+	width: 0%;
+	height: 10px;
+	background-color: #B2B2B2;
+	border-right: 1px solid #000000;
+}
+.sc-player ol.sc-trackslist {
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.sc-player ol.sc-trackslist li {
+	float: left;
+	width: 100%;
+	cursor: pointer;
+	margin: 5px 0;
+	padding: 0 0 2px;
+	font-size: 0.714285rem !important;
+	border-bottom: 1px solid #B2B2B2;
+}
+.sc-player ol.sc-trackslist li .sc-track-name {
+	float: left;
+	width: 85%;
+}
+.sc-player ol.sc-trackslist li .sc-track-duration {
+	float: right;
+	width: 15%;
+	color: #B2B2B2;
+	text-align: right;
+}
+.sc-player .sc-artwork-list,
+.sc-player .sc-artwork-list li,
+.sc-player .sc-artwork-list li.active,
+.sc-player .sc-artwork-list li img, 
+.sc-player .sc-artwork-list li div,
+.sc-player .sc-info,
+.sc-player .sc-info.active,
+.sc-player .sc-info-toggle,
+.sc-player .sc-info-toggle.active,
+.sc-player .sc-info-close,
+.sc-scrubber,
+.sc-scrubber .sc-time-span,
+.sc-scrubber .sc-buffer, .sc-scrubber .sc-played,
+.sc-scrubber .sc-time-indicators,
+.sc-player .sc-artwork-list {
+	display: none;
+}
+
+
+
+
+
