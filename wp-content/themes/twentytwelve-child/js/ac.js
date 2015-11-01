@@ -182,7 +182,7 @@ function checkIsMobile() { /* detect mobile (ie touchscreen) device */
 	}
 }
 
-function responsiveGrid( itemPerLine, target, subtype ) {  /* reorganize Releases & Shop grid */
+function responsiveGrid( itemPerLine, target, subtype ) { /* reorganize Releases & Shop grid */
 	var ct = 1;
 	var first = true;
 	if ( subtype == '' ) {
@@ -208,7 +208,7 @@ function responsiveGrid( itemPerLine, target, subtype ) {  /* reorganize Release
     } );
 }
 	
-function resizeIframes() {  /* resize all iframes */
+function resizeIframes() { /* resize all iframes */
 	var allVids = $j( "iframe" );
 	allVids.each( function() { 
 		var elt = $j( this );
@@ -218,7 +218,7 @@ function resizeIframes() {  /* resize all iframes */
 	} );
 }
 
-function nlFormSubmit() {  /* newsletter subscription form submit */
+function nlFormSubmit() { /* newsletter subscription form submit */
 	if ( $j( '#ac-nl-subscribe' ).valid() ) {
 		$j( '#ac-nl-submit' ).addClass( 'loading' );
 		var input_obj = $j( '#ac-nl-email' );
@@ -248,3 +248,16 @@ function nlFormSubmit() {  /* newsletter subscription form submit */
 	return false;
 }
 
+function dlFormSubmit() { /* download form submit */
+	if ( $j( '#ac-download-form' ).valid() ) {
+		var url = $j( '#ac-download-code' ).attr( 'action' );
+		var code = $j( '#ac-download-code' ).val();
+alert(code);
+		$j.get( url, function( data ) {
+			//$j( ".result" ).html( data );
+			console.log(data);
+			alert( "Load was performed." );
+		});	
+	}
+	return false;
+}

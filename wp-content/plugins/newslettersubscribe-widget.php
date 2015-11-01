@@ -92,7 +92,7 @@ class Ac_Newletter_Subscribe_Widget extends WP_Widget {
 				<input class="email" name="email" type="email" id="ac-nl-email" placeholder="Your email" />
 				<a id="ac-nl-submit" class="submit" href="javascript:void(0)" onclick="nlFormSubmit()"><span>Go</span></a>
 			</form>
-			<script>$j('#ac-nl-subscribe').validate();</script>
+			<script>$j( '#ac-nl-subscribe' ).validate();</script>
 			<div class="ac-nl-messages"></div>
 		</div><?php 
 	}

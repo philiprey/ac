@@ -7,6 +7,7 @@ Author: Philippe Rey
 */
 
 class Ac_Last_Releases_Widget extends WP_Widget {
+	public $max_releases = 4;
 	
 	function __construct() {
 		parent::__construct(
@@ -48,22 +49,36 @@ class Ac_Last_Releases_Widget extends WP_Widget {
 			
 			<?php
 			/* get last 3 releases */
+			$release_ct = 0;
 			query_posts( 
 				array( 
 					'post_type' => 'product', 
-					'posts_per_page' => 3, 
-					'product_cat' => '7inches,10inches,12inches,other,tape'
+					'posts_per_page' => $this->max_releases * 2, 
+					'product_cat' => '7inches,10inches,12inches,other,tape,digital'
 				)
 			);
 			while ( have_posts() ) : the_post();?>
 				<?php
-				$external_link = get_field( 'release-external_buy_link' );
+				/* skip non-orphane digital releases */
 				$post_ID = get_the_ID();
+				$sku = get_product_sku_by_id( $post_ID );
+				if ( substr( $sku, -1 ) == 'd' ) {
+					if ( ! is_null( get_product_id_by_sku( substr( $sku, 0, -1 ) ) ) ) {
+						continue;
+					}
+				}
+				$release_ct++;
+				
+				/* set link */
+				$external_link = get_field( 'release-external_buy_link' );
 				if ( empty( $external_link ) ) {
 					$link = get_permalink( $post_ID );	
 				} else {
 					$link = '/shop#' . $post_ID;
-				}	
+				}
+				
+				/* check release count */
+				if ( $release_ct == $this->max_releases + 1 ) { break; }
 				?>
 				<a href="<?php echo $link; ?>">
 					<?php echo the_post_thumbnail( 'last-releases-thumb' ); ?>
@@ -79,7 +94,7 @@ class Ac_Last_Releases_Widget extends WP_Widget {
 						?>
 						<h3>
 							<span class="artist"><?php echo implode( " & ", $artists ); ?></span><br />
-							<?php if ( !empty( $title ) ): ?>
+							<?php if ( ! empty( $title ) ): ?>
 			        			<span class="title"><?php echo $title; ?></span>
 			        		<?php else: ?>
 								&nbsp;        			

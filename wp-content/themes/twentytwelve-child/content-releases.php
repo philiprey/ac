@@ -12,12 +12,7 @@ $special_link = get_field( 'release-special_link' );
 	
 	<li class="release-bloc<?php echo $first ? " first":""; ?>">
 		<?php if ( empty( $special_link ) ): ?>
-			<?php $status = get_post_status(); ?>
-			<?php /* if ( $status == "future" ) : */ ?>
-				<!-- <a href="<?php echo get_site_url() . $permalink_base . "/" . $post->post_name; ?>"> -->
-			<?php /* else: */ ?>
-				<a href="<?php the_permalink(); ?>">
-			<?php /* endif; */ ?>
+			<a href="<?php the_permalink(); ?>">
 		<?php else: ?>
 			<a href="<?php echo $special_link; ?>" target="blank">
 		<?php endif; ?>

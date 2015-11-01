@@ -828,7 +828,11 @@ footer[role="contentinfo"] svg {
 	padding: 50px 0;	
 }
 #ac-download-form .text {
-	margin-bottom: 15px;
+	margin-bottom: 20px;
+}
+#ac-download-form .text p {
+	margin-bottom: 10px !important;
+	text-align: center !important;
 }
 #ac-download-form .ac-download-code {
 	margin: 5px 0 0;
@@ -857,6 +861,12 @@ footer[role="contentinfo"] svg {
     text-decoration: none;
     text-shadow: none;
     white-space: nowrap;
+}
+#ac-download-code-error {
+	display: none !important;
+}
+#ac-download-form input.error {
+	border-color: #A00000;
 }
 
 /* =Mobile & Tablet= */

@@ -138,6 +138,18 @@ function get_product_id_by_sku( $sku ) {
 	return null;
 }
 
+/* get product SKU by ID */
+function get_product_sku_by_id( $id ) {
+	global $product;
+  	if ( empty( $id ) ) {
+		$sku = $product->get_sku();
+	} else {
+		$product = wc_get_product( $id );
+	  	$sku = $product->get_sku();		
+	}
+	return $sku;
+}
+
 /* get release attribute value */
 function get_release_attribute_value( $post_id, $attribute ) {
 	$result = "";
