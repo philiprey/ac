@@ -45,6 +45,7 @@ add_image_size( 'last-releases-thumb', 174, 9999 );
 add_image_size( 'releases-grid-thumb', 374, 9999 );
 add_image_size( 'release-cover-thumb', 176, 9999 );
 add_image_size( 'shop-thumb', 306, 9999 );
+add_image_size( 'download-thumb', 250, 9999 );
 
 /* add 'Artist' & 'Shops' post types */
 add_action( 'init', 'create_posttype' );
@@ -131,7 +132,15 @@ add_action( 'wp_footer', 'custom_infinite_scroll_js', 100 );
 /* get product ID by SKU */
 function get_product_id_by_sku( $sku ) {
 	global $wpdb;
-	$product_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_sku' AND meta_value='%s' LIMIT 1", $sku ) );
+	$product_id = $wpdb->get_var( 
+		$wpdb->prepare( "SELECT posts.ID FROM $wpdb->posts AS posts
+			LEFT JOIN $wpdb->postmeta AS postmeta ON ( posts.ID = postmeta.post_id )
+			WHERE posts.post_type IN ( 'product', 'product_variation' )
+			AND postmeta.meta_key = '_sku' AND postmeta.meta_value = '%s'
+			LIMIT 1", $sku
+		)
+	);
+	
 	if ( $product_id ) {
 		return $product_id;
 	}

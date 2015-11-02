@@ -248,16 +248,35 @@ function nlFormSubmit() { /* newsletter subscription form submit */
 	return false;
 }
 
-function dlFormSubmit() { /* download form submit */
-	if ( $j( '#ac-download-form' ).valid() ) {
-		var url = $j( '#ac-download-code' ).attr( 'action' );
+function dlCheckFormSubmit() { /* download check form submit */
+	if ( $j( '#ac-download-check-form' ).valid() ) {
+		if ( $j( '#ac-download-form-container' ).is(":visible") ) {
+			$j( '#ac-download-form-container' ).slideToggle( 400 );
+		}
+		if ( $j( '.ac-dl-error-message' ).is(":visible") ) {
+			$j( '#ac-download-code' ).removeClass( 'error' ).addClass( 'valid' );
+			$j( '.ac-dl-error-message' ).slideToggle( 400 );
+		}
+		$j( '#ac-download-check-submit' ).addClass( 'loading' );
+		var url = $j( '#ac-download-check-form' ).attr( 'action' );
 		var code = $j( '#ac-download-code' ).val();
-alert(code);
-		$j.get( url, function( data ) {
-			//$j( ".result" ).html( data );
-			console.log(data);
-			alert( "Load was performed." );
+		$j.post( url, { code: code } ).done(function( data ) {
+			$j( '#ac-download-check-submit' ).removeClass( 'loading' );	
+			var obj = jQuery.parseJSON( data );
+			if ( obj.error_message != '' ) {
+				$j( '#ac-download-code' ).removeClass( 'valid' ).addClass( 'error' );
+				$j( '.ac-dl-error-message' ).html( obj.error_message );
+				$j( '.ac-dl-error-message' ).slideToggle( 800 );
+			} else {
+				$j( '#ac-download-code' ).val( '' );
+				$j( '#ac-download-form-container' ).html( obj.download_form );
+				$j( '#ac-download-form-container' ).slideToggle( 800 );
+			}
 		});	
 	}
 	return false;
+}
+
+function dlFormSubmit() { /* download form submit */
+	$j( '#ac-download-form' ).submit();
 }

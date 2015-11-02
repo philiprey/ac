@@ -823,26 +823,27 @@ footer[role="contentinfo"] svg {
 .download-content {
 	text-align: center;
 }
-#ac-download-form {
+#ac-download-check-form {
 	display: inline-block;
-	padding: 50px 0;	
+	padding: 40px 0;	
 }
-#ac-download-form .text {
+#ac-download-check-form .text {
 	margin-bottom: 20px;
 }
-#ac-download-form .text p {
+#ac-download-check-form .text p {
 	margin-bottom: 10px !important;
 	text-align: center !important;
 }
-#ac-download-form .ac-download-code {
+#ac-download-check-form .ac-download-code {
 	margin: 5px 0 0;
-	padding: 0.428571rem;
+	padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 3px;
     box-sizing: border-box;
     font-family: inherit;
     outline: 0 none;
 }
+#ac-download-check-form .submit,
 #ac-download-form .submit {
 	margin: 5px 0 0;
 	padding: 0.5rem !important;
@@ -862,12 +863,42 @@ footer[role="contentinfo"] svg {
     text-shadow: none;
     white-space: nowrap;
 }
+#ac-download-check-form .submit.loading {
+	background: url("img/small-loader.gif") no-repeat 50% 50%;
+}
+#ac-download-check-form .submit.loading span {
+	visibility: hidden;
+}
 #ac-download-code-error {
 	display: none !important;
 }
-#ac-download-form input.error {
+#ac-download-check-form input.error {
 	border-color: #A00000;
 }
+.ac-dl-error-message {
+	display: none;
+	width: 100%;
+	margin-top: 10px !important;
+	text-align: center !important;
+	color: #A00000;
+}
+#ac-download-form-container {
+	display: none;
+	width: 252px;
+	margin: 0 auto 30px auto;
+}
+#ac-download-form .title {
+	display: block;
+	margin-bottom: 5px;
+}
+#ac-download-form img {
+	display: block;
+	border: 1px #B2B2B2 solid !important;
+}
+#ac-download-form .submit {
+	display: block;
+}
+
 
 /* =Mobile & Tablet= */
 .mobile .main-navigation li a:hover {
