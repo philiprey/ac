@@ -98,9 +98,6 @@ $post_ID = $post->ID;
 				?>
 					<script>
 						$j( '#<?php echo $sku . "-preorder"; ?>' ).tooltipster();
-				       //jQuery(function () {
-				            //$j( '#<?php echo $sku . "-preorder"; ?>' ).tooltipster('show');
-				        //});
 					</script>
 				<?php
 			}
