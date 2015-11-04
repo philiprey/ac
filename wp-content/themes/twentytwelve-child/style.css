@@ -693,6 +693,7 @@ footer[role="contentinfo"] svg {
 }
 .shop-bloc .entry-price .preorder {
 	font-weight: bold;
+	cursor: default;
 }
 .shop-bloc .entry-content .info .ref {
 	color: #B2B2B2;

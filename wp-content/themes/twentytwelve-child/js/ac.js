@@ -109,7 +109,15 @@ $j( document ).ready( function() {
 		}
 		
 	} ); 
-	 
+	
+	/* activate tooltips */
+	//$j( '.tooltip' ).tooltipster();
+/*
+	$j( '.tooltip' ).tooltipster({
+                content: $j('<span><img src="my-image.png" /> <strong>This text is in bold case !</strong></span>')
+            });
+*/
+	
     /* create lightboxes */
     $j( '.band-pics a, .record-pics a' ).fancybox( { 
 		'transitionIn'	:	'elastic',

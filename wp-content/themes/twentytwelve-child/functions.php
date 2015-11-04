@@ -11,11 +11,16 @@ add_action( 'wp_head', 'favicon_link' );
 if ( !is_admin() ) {
 	wp_enqueue_style( 'sc-player', get_bloginfo( 'stylesheet_directory' ) . '/css/sc-player.css' );
 	
+	wp_enqueue_style( 'tooltipser', get_bloginfo( 'stylesheet_directory' ) . '/css/tooltipster.css' );
+	
     wp_enqueue_script( 'jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', array( 'jquery' ), '1.11.4' );
  	
  	wp_enqueue_style( 'style-name', get_bloginfo( 'stylesheet_directory' ) . '/css/jquery.fancybox-1.3.4.css' );
  	wp_enqueue_script( 'script-name', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.fancybox-1.3.4.pack.js', array(), '1.0.0', true );
-
+ 	
+ 	wp_register_script( 'jquery-tooltipser',  get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.tooltipster.min.js', array( 'jquery' ), '1.0' );
+ 	wp_enqueue_script( 'jquery-tooltipser' );
+ 	
  	wp_register_script( 'jquery-validate',  get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.validate.js', array( 'jquery' ), '1.0' );
  	wp_enqueue_script( 'jquery-validate' );
  	

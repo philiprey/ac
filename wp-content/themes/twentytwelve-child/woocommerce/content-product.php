@@ -94,7 +94,15 @@ $post_ID = $post->ID;
 				echo number_format( $price[0], 2 ) . "&euro;";
 			}
 			if ( ! $is_digital && $is_preorder ) {
-				echo " - <span class='preorder'>PREORDER</span>";
+				echo " - <span class='preorder tootltip' id='" . $sku . "-preorder' title='Out " . date( 'F d, Y', strtotime( get_field( 'release-date' ) ) ) . "'>PREORDER</span>";
+				?>
+					<script>
+						$j( '#<?php echo $sku . "-preorder"; ?>' ).tooltipster();
+				       //jQuery(function () {
+				            //$j( '#<?php echo $sku . "-preorder"; ?>' ).tooltipster('show');
+				        //});
+					</script>
+				<?php
 			}
 		?>
 	</div>
