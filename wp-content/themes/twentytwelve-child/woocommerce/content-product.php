@@ -96,9 +96,7 @@ $post_ID = $post->ID;
 			if ( ! $is_digital && $is_preorder ) {
 				echo " - <span class='preorder tootltip' id='" . $sku . "-preorder' title='Out " . date( 'F d, Y', strtotime( get_field( 'release-date' ) ) ) . "'>PREORDER</span>";
 				?>
-					<script>
-						$j( '#<?php echo $sku . "-preorder"; ?>' ).tooltipster();
-					</script>
+					<script>$j( '#<?php echo $sku . "-preorder"; ?>' ).tooltipster();</script>
 				<?php
 			}
 		?>
