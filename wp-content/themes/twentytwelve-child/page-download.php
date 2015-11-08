@@ -14,7 +14,7 @@ $url = get_stylesheet_directory_uri() . "/download/check-download-code.php";
 			
 		<form id="ac-download-check-form" name="ac-download-check-form" action="<?php echo $url; ?>" method="GET">
 			<div class="text">
-				<p>You're at the right place to download you record.</p>
+				<p>You're at the right place to download your record.</p>
 				<p>Please insert -below- the code written on your download card and click on "<b>Go</b>". Easy, right ?</p> 
 				<p>If you have any problem, feel free to contact us at <a href="mailto:atelierciseaux@gmail.com">atelierciseaux@gmail.com</a></p>
 			</div>
