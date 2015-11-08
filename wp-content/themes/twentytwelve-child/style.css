@@ -890,11 +890,12 @@ footer[role="contentinfo"] svg {
 }
 #ac-download-form .title {
 	display: block;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 #ac-download-form img {
 	display: block;
 	border: 1px #B2B2B2 solid !important;
+	margin-bottom: 10px;
 }
 #ac-download-form .submit {
 	display: block;
